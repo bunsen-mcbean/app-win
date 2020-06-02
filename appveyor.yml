@@ -4,7 +4,7 @@ image: Visual Studio 2017
 matrix:
   fast_finish: true
 
-env:
+environment:
     COMMIT_ID: 604051797b33ce9b5bf6350af0dada5482149e2c
 
 install:
