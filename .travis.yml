@@ -4,9 +4,6 @@ env:
     COMMIT_ID: 604051797b33ce9b5bf6350af0dada5482149e2c
 
 install:
-
-  - nvm install v12.16.1
-  - nvm use v12.16.1
   
   # nanomsg
   - curl -L -o nanomsg.tar.gz https://github.com/nanomsg/nanomsg/archive/1.1.5.tar.gz
