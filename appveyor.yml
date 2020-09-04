@@ -5,6 +5,10 @@ matrix:
   fast_finish: true
 
 environment:
+  CHERE_INVOKING: 'yes'  # Preserve the current working directory
+  MSYSTEM: 'MINGW64'     # Start a 64 bit Mingw environment
+
+environment:
     COMMIT_ID: 604051797b33ce9b5bf6350af0dada5482149e2c
 
 install:
@@ -12,8 +16,6 @@ install:
   # Update MSYS2
   - curl -O http://repo.msys2.org/msys/x86_64/msys2-keyring-r21.b39fb11-1-any.pkg.tar.xz
   - curl -O http://repo.msys2.org/msys/x86_64/msys2-keyring-r21.b39fb11-1-any.pkg.tar.xz.sig
-  - $env:CHERE_INVOKING = 'yes'  # Preserve the current working directory
-  - $env:MSYSTEM = 'MINGW64'  # Start a 64 bit Mingw environment
   - C:\msys64\usr\bin\bash -lc "pacman-key --verify msys2-keyring-r21.b39fb11-1-any.pkg.tar.xz.sig && pacman -U msys2-keyring-r21.b39fb11-1-any.pkg.tar.xz"
   - C:\msys64\usr\bin\bash -lc "pacman -Syuu"  # Core update (in case any core packages are outdated)
   - C:\msys64\usr\bin\bash -lc "pacman -Syuu"  # Normal update
