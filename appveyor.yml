@@ -16,6 +16,7 @@ install:
   - curl -O http://repo.msys2.org/msys/x86_64/msys2-keyring-r21.b39fb11-1-any.pkg.tar.xz.sig
   - C:\msys64\usr\bin\bash -lc "pacman-key --verify msys2-keyring-r21.b39fb11-1-any.pkg.tar.xz.sig && pacman -U --noconfirm msys2-keyring-r21.b39fb11-1-any.pkg.tar.xz"
   - C:\msys64\usr\bin\bash -lc "pacman -Syuu --noconfirm"  # Core update (in case any core packages are outdated)
+  - taskkill /f /fi "MODULES eq msys-2.0.dll" || exit /b 0
   - C:\msys64\usr\bin\bash -lc "pacman -Syuu --noconfirm"  # Normal update
   
   # nanomsg
