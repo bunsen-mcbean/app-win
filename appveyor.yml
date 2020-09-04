@@ -6,6 +6,7 @@ matrix:
 
 environment:
   COMMIT_ID: 604051797b33ce9b5bf6350af0dada5482149e2c
+  MINGW_INSTALLS: mingw64
   CHERE_INVOKING: 'yes'  # Preserve the current working directory
   MSYSTEM: 'MINGW64'     # Start a 64 bit Mingw environment
 
@@ -37,10 +38,8 @@ install:
   - tar xf pb.tar.gz --strip-components=1 -C pb
   - cd pb
   - C:\msys64\usr\bin\bash -lc "./configure"
-#   - configure
-#   - make
-#   - sudo make install
-#   - cd ..
+  - C:\msys64\usr\bin\bash -lc "make"
+  - cd ..
   
   # boost
   - curl -L -o boost.tar.bz2 https://sourceforge.net/projects/boost/files/boost/1.66.0/boost_1_66_0.tar.gz/download
